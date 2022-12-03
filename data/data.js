@@ -27,6 +27,7 @@ const data = {
   products: [
     {
       id: 1,
+      slug: "queeriosities1",
       name: "Queeriosities",
       price: 10,
       image: "/public/assets/product.jpg",
@@ -34,6 +35,7 @@ const data = {
     },
     {
       id: 2,
+      slug: "queeriosities2",
       name: "Queeriosities",
       price: 10,
       image: "/public/assets/product.jpg",
@@ -42,6 +44,7 @@ const data = {
     {
       id: 3,
       name: "Queeriosities",
+      slug: "queeriosities3",
       price: 10,
       image: "/public/assets/product.jpg",
       description: "The best place to buy",

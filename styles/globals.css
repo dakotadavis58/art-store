@@ -34,16 +34,38 @@ a {
   @apply flex justify-between items-center p-4 bg-black;
 }
 
+.link {
+  @apply border-b-2 border-b-transparent
+}
+
+.activeLink {
+  @apply border-b-2 border-b-tertiary
+}
+
 .btn {
-  @apply px-4 py-2 rounded-md text-white bg-tertiary hover:bg-pink-600;
+  @apply px-4 py-2 text-white bg-tertiary hover:bg-pink-600;
 }
 
 .btn-primary {
-  @apply bg-tertiary hover:bg-pink-600;
+  @apply bg-secondary hover:bg-pink-600;
 }
 
 .btn-secondary {
-  @apply bg-primary hover:bg-indigo-600;
+  @apply bg-primary hover:bg-purple-600;
+}
+
+.btn-sm {
+  @apply px-2 py-1 text-sm;
+}
+
+.btn-rounded {
+  @apply rounded-md;
+}
+
+.card {
+
+  @apply transition-all border-2 border-gray-700 rounded flex flex-col  hover:border-2 hover:border-primary
+
 }
 
 .main {
