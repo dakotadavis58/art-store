@@ -125,9 +125,27 @@ const data = {
     btnText: "Shop Newest",
   },
   about: {
-    title: "About Us",
-    subtitle: "The best place to buy",
+    title: "About Us!",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi corporis perspiciatis quasi recusandae quisquam molestias et ad accusantium fuga officia, delectus, architecto, aliquid porro provident doloribus culpa dolore quam sunt.",
     btnText: "Find Out More",
+    images: [
+      {
+        id: 1,
+        img: "/assets/mrrp.jpeg",
+        alt: "About Image",
+      },
+      {
+        id: 2,
+        img: "/assets/head.jpeg",
+        alt: "About Image",
+      },
+      {
+        id: 3,
+        img: "/assets/spectral-fox.jpeg",
+        alt: "About Image",
+      },
+    ],
   },
   contact: {
     title: "Contact Us",

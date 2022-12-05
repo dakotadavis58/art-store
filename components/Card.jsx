@@ -5,7 +5,7 @@ import React from "react";
 import Button from "./Button";
 import img from "/public/assets/product.jpg";
 
-function Card({ product, newArrivals }) {
+function Card({ product, newArrivals, loading }) {
   const { id, slug, name, price, description, reviews } = product;
   const rating =
     reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length;
@@ -13,7 +13,9 @@ function Card({ product, newArrivals }) {
   return (
     <article
       key={id}
-      className="transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:border-opacity-10 pb-2"
+      className={` transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:border-opacity-10 pb-2 ${
+        loading ? "animate-pulse" : ""
+      }`}
     >
       <div className=" ">
         <Link href={`/products/${slug}`}>

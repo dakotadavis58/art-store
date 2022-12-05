@@ -5,7 +5,7 @@ function Input({ type, placeHolder, className }) {
     <input
       type={type}
       placeholder={placeHolder}
-      className={`bg-neutral-800 rounded-md mr-1 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary w-full ${
+      className={`bg-neutral-800 drop-shadow-xl shadow-xl rounded-md mr-1 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary w-full ${
         className ? className : ""
       }`}
     />

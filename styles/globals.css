@@ -20,14 +20,23 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+html {
+  color-scheme: dark;
+}
+body {
+  color: white;
+  @apply bg-neutral-900;
+}
+
+@media (prefers-color-scheme: light) {
   body {
-    color: white;
-    @apply bg-neutral-900;
+    color: black;
+    @apply bg-neutral-100;
   }
+}
+
+img {
+  border-radius: 0.5rem;
 }
 
 /* Components */
@@ -88,11 +97,11 @@ a {
 }
 
 .btn-primary {
-  @apply bg-secondary hover:bg-pink-600;
+  @apply bg-secondary hover:bg-primaryDark;
 }
 
 .btn-secondary {
-  @apply bg-primary hover:bg-purple-600;
+  @apply bg-primary hover:bg-secondaryDark;
 }
 
 .btn-sm {
@@ -105,9 +114,22 @@ a {
 
 .image-container {
   width: 100%;
+  overflow: hidden;
+  @apply rounded-md;
 }
 
-.image {
+.image-container > img {
+  @apply rounded-md;
+}
+
+.imageCover {
+  object-fit: cover;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.imageContain {
   object-fit: contain;
   width: 100% !important;
   position: relative !important;
@@ -123,4 +145,13 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.coolShadow {
+  box-shadow: 2.7px 2.3px 2.2px rgba(0, 0, 0, 0.04),
+    6.5px 5.5px 5.3px rgba(0, 0, 0, 0.052),
+    12.3px 10.3px 10px rgba(0, 0, 0, 0.058),
+    21.9px 18.3px 17.9px rgba(0, 0, 0, 0.062),
+    40.9px 34.3px 33.4px rgba(0, 0, 0, 0.065),
+    98px 82px 80px rgba(0, 0, 0, 0.07);
 }

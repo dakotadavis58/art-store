@@ -1,20 +1,31 @@
+import Image from "next/image";
 import React from "react";
+import data from "../../data/data";
 
 function About() {
+  const { about } = data;
+  const { title, description, images } = about;
   return (
-    <div className="my-20 py-20 flex flex-col items-center parallax">
-      <h1>About Us!</h1>
-      <div className="bg-neutral-800 text-white p-8 rounded-md">
-        <p className="max-w-2xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          quod voluptatum. Quisquam, quod voluptatum. Quisquam, quod voluptatum.
-          Quisquam, quod voluptatum. Quisquam, quod voluptatum. Quisquam, quod
-          voluptatum. Quisquam, quod voluptatum. Quisquam, quod voluptatum.
-          Quisquam, quod voluptatum. Quisquam, quod voluptatum. Quisquam, quod
-          voluptatum. Quisquam, quod voluptatum. Quisquam, quod voluptatum.
-          Quisquam, quod voluptatum. Quisquam, quod voluptatum. Quisquam, quod
-          voluptatum. Quisquam, quod
-        </p>
+    <div className="my-20 py-20 flex flex-col items-center parallax gap-8">
+      <div className="bg-neutral-800 text-white p-8 rounded-md flex flex-col gap-8 items-center m-4">
+        <h2 className="text-3xl font-semibold">{title}</h2>
+        <p className="max-w-2xl">{description}</p>
+        <div className="gallery w-full gap-8 min-h-[200px] max-w-4xl flex md:flex-row flex-col items-center">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="image-container flex-1 min-h-[16rem] max-h-[24rem] min-w-[16rem] max-w-[20rem]"
+            >
+              <Image
+                key={index}
+                src={image.img}
+                fill
+                alt={image.alt}
+                className="imageCover min-h-[10rem] max-h-full rounded-md"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import {
 
 function Socials() {
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-4 md:gap-8">
       <Link href="https://www.facebook.com/" className="transition-all">
         <FaFacebookSquare className="text-3xl text-white hover:text-primary transition-all " />
       </Link>
