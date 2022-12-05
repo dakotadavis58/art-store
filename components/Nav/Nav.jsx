@@ -2,7 +2,6 @@ import React from "react";
 import Links from "../Links";
 import Logo from "../Logo";
 import data from "../../data/data.js";
-import img from "../../public/assets/logo.png";
 import { BsPerson, BsCart2 } from "react-icons/bs";
 import Search from "./Search";
 import Link from "next/link";
@@ -17,7 +16,7 @@ function Nav() {
 
   return (
     <nav className="flex justify-between items-center p-4 bg-black">
-      <Logo logo={logo} img={img} />
+      <Logo logo={logo} />
       <Search />
       <Links links={navLinks} />
       <div className="flex gap-4">

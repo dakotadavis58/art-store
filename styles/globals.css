@@ -35,15 +35,15 @@ a {
 }
 
 .link {
-  @apply border-b-2 border-b-transparent;
+  @apply transition-all border-b-2 border-b-transparent hover:text-primary;
 }
 
 .activeLink {
-  @apply border-b-2 border-b-primary;
+  @apply border-b-2 border-b-secondary;
 }
 
 .btn {
-  @apply px-4 py-2 text-white bg-tertiary hover:bg-pink-600;
+  @apply px-4 py-2 text-white bg-tertiary hover:bg-pink-600 transition-all;
 }
 
 .btn-primary {
@@ -72,7 +72,7 @@ a {
 .heroImg {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/bg-img.jpg");
+    url("../public/assets/hero-bg.jpeg");
 
   /* Set a specific height */
   height: 100%;
@@ -83,10 +83,6 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-
-.footer {
-  @apply flex justify-center items-center p-4 bg-gray-900 min-h-[20vh];
 }
 
 .image-container {

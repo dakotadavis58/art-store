@@ -9,13 +9,14 @@ const data = {
     logo: {
       alt: "Logo",
       text: "Queeriosities",
+      img: require("/public/assets/logo.png"),
     },
     btnText: "Shop Now",
   },
   hero: {
     title: "Queeriosities",
     subtitle: "The best place to buy",
-    btnText: "Shop",
+    btnText: "Shop Now",
   },
   footer: {
     footerLinks: [
