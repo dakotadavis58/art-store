@@ -11,8 +11,8 @@ function Commissions() {
     router.push("/contact");
   };
   return (
-    <section className="flex flex-col md:flex-row items-center w-full h-full min-h-[30vh] py-20 ">
-      <div className="left flex-1 p-4">
+    <div className="flex flex-col md:flex-row items-center w-full h-full min-h-[30vh]">
+      <div className="left flex-1 px-2">
         <h1 className="text-3xl md:text-6xl">Now Accepting Commissions!</h1>
         <p className="py-4 text-base md:text-lg text-neutral-300">
           Have an idea for a custom piece? We&apos;re now accepting commissions
@@ -35,7 +35,7 @@ function Commissions() {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -4,8 +4,8 @@ import Input from "../Input";
 
 function Newsletter() {
   return (
-    <section className="min-h-[20vh] flex flex-col min-w-full w-screen justify-center items-center py-20">
-      <div className="w-3/4 md:w-1/2 bg-primary rounded-md bg-opacity-75 h-[16rem] coolShadow flex flex-col justify-center items-center">
+    <div className="min-h-[20vh] flex flex-col min-w-full w-screen justify-center items-center">
+      <div className="min-w-[20rem] py-2 bg-primary rounded-md bg-opacity-75 min-h-[8rem] coolShadow flex flex-col justify-center items-center">
         <h1 className="text-3xl p-4 mx-auto text-center drop-shadow-2xl">
           Join Our Newsletter!
         </h1>
@@ -18,7 +18,7 @@ function Newsletter() {
           <Button text={"Send"} rounded primary className=""></Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
