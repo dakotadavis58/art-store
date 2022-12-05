@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Links from "../Links";
 import Logo from "../Logo";
 import data from "../../data/data.js";
@@ -9,18 +9,34 @@ import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 
-function Nav({ handleOpen, open }) {
+function Nav({ handleOpen }) {
   const { navLinks, logo, btnText } = data.nav;
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = () => {
-    console.log("clicked");
+    setIsOpen(!isOpen);
   };
+
+  let menuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    });
+  });
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [router.asPath]);
 
   return (
     <nav className="flex justify-between items-center p-4 bg-neutral-900">
       <Logo logo={logo} />
       <Search />
-      <Links links={navLinks} />
+      <Links links={navLinks} handleClick={handleClick} />
       <div className="flex gap-4 m-2">
         <Link
           href={"/profile"}
@@ -41,19 +57,15 @@ function Nav({ handleOpen, open }) {
           </div>
         </Link>
         <div className="relative">
-          <button className="md:hidden link" onClick={handleOpen}>
+          <button className="md:hidden link" onClick={(e) => handleClick(e)}>
             <BiMenu className="text-4xl" />
           </button>
           <div
-            className={`absolute right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-black drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
-              open ? "right-0" : "hidden"
+            ref={menuRef}
+            className={`absolute right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-neutral-800 drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
+              isOpen ? "" : "hidden"
             }`}
           >
-            <div className="relative m-4 top-0 z-[1000]">
-              {/* <button onClick={handleOpen}>
-                <IoMdClose className="link text-4xl text-white" />
-              </button> */}
-            </div>
             <Search />
             <Links className={"justify-evenly"} col mobile links={navLinks} />
           </div>
