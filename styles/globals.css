@@ -25,6 +25,7 @@ html {
 }
 body {
   color: white;
+  overflow-x: hidden;
   @apply bg-neutral-900;
 }
 
@@ -110,6 +111,10 @@ img {
 
 .btn-rounded {
   @apply rounded-md;
+}
+
+.pill {
+  @apply rounded-full;
 }
 
 .image-container {
