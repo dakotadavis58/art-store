@@ -21,19 +21,6 @@ function Nav({ handleOpen, open }) {
       <Logo logo={logo} />
       <Search />
       <Links links={navLinks} />
-      <div
-        className={`transition-all md:hidden absolute top-0 w-[50vw] h-screen bg-black z-[1000] flex flex-col  ${
-          open ? "right-0" : "right-[-100vw]"
-        }`}
-      >
-        <div className="relative m-4">
-          <button onClick={handleOpen}>
-            <IoMdClose className="link text-4xl text-white" />
-          </button>
-        </div>
-        <Search />
-        <Links className={"justify-evenly"} col mobile links={navLinks} />
-      </div>
       <div className="flex gap-4 m-2">
         <Link
           href={"/profile"}
@@ -53,9 +40,24 @@ function Nav({ handleOpen, open }) {
             <BsCart2 className="text-3xl" />
           </div>
         </Link>
-        <button className="md:hidden link" onClick={handleOpen}>
-          <BiMenu className="text-4xl" />
-        </button>
+        <div className="relative">
+          <button className="md:hidden link" onClick={handleOpen}>
+            <BiMenu className="text-4xl" />
+          </button>
+          <div
+            className={`absolute right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-black drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
+              open ? "right-0" : "hidden"
+            }`}
+          >
+            <div className="relative m-4 top-0 z-[1000]">
+              {/* <button onClick={handleOpen}>
+                <IoMdClose className="link text-4xl text-white" />
+              </button> */}
+            </div>
+            <Search />
+            <Links className={"justify-evenly"} col mobile links={navLinks} />
+          </div>
+        </div>
       </div>
     </nav>
   );

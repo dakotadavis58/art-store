@@ -12,7 +12,7 @@ function Hero({ hero }) {
   };
 
   return (
-    <section className="hero h-[60vh] w-screen">
+    <section className="hero h-[60vh] w-screen z-0">
       <div className="heroImg flex flex-col justify-center items-center gap-4">
         <h1 className="text-5xl md:text-7xl">{title}</h1>
         <h2 className="md:text-2xl">{subtitle}</h2>
