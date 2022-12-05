@@ -26,40 +26,13 @@ a {
   }
   body {
     color: white;
-    background: black;
+    @apply bg-neutral-900;
   }
 }
 
+/* Components */
 .newArrivals {
   @apply hover:border-2 hover:border-primary;
-}
-
-.link {
-  @apply transition-all border-b-2 border-b-transparent hover:text-primary;
-}
-
-.activeLink {
-  @apply border-b-2 border-b-secondary;
-}
-
-.btn {
-  @apply px-4 py-2 text-white bg-tertiary hover:bg-pink-600 transition-all;
-}
-
-.btn-primary {
-  @apply bg-secondary hover:bg-pink-600;
-}
-
-.btn-secondary {
-  @apply bg-primary hover:bg-purple-600;
-}
-
-.btn-sm {
-  @apply px-2 py-1 text-sm;
-}
-
-.btn-rounded {
-  @apply rounded-md;
 }
 
 .hero {
@@ -81,6 +54,55 @@ a {
   position: relative;
 }
 
+.card {
+  box-shadow: 2.7px 2.3px 2.2px rgba(0, 0, 0, 0.04),
+    6.5px 5.5px 5.3px rgba(0, 0, 0, 0.052),
+    12.3px 10.3px 10px rgba(0, 0, 0, 0.058),
+    21.9px 18.3px 17.9px rgba(0, 0, 0, 0.062),
+    40.9px 34.3px 33.4px rgba(0, 0, 0, 0.065),
+    98px 82px 80px rgba(0, 0, 0, 0.07);
+  background: rgb(48, 48, 48);
+  background: radial-gradient(
+    circle,
+    rgba(48, 48, 48, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.card:hover {
+  box-shadow: 4.6px 3.7px 2.2px rgba(0, 0, 0, 0.092),
+    11px 8.8px 5.3px rgba(0, 0, 0, 0.118),
+    20.8px 16.7px 10px rgba(0, 0, 0, 0.133),
+    37.1px 29.7px 17.9px rgba(0, 0, 0, 0.142),
+    69.4px 55.6px 33.4px rgba(0, 0, 0, 0.149),
+    166px 133px 80px rgba(0, 0, 0, 0.16);
+}
+
+/* Elements */
+
+.link {
+  @apply transition-all border-b-2 border-b-transparent hover:text-primary;
+}
+
+.activeLink {
+  @apply border-b-2 border-b-secondary;
+}
+
+.btn-primary {
+  @apply bg-secondary hover:bg-pink-600;
+}
+
+.btn-secondary {
+  @apply bg-primary hover:bg-purple-600;
+}
+
+.btn-sm {
+  @apply px-2 py-1 text-sm;
+}
+
+.btn-rounded {
+  @apply rounded-md;
+}
+
 .image-container {
   width: 100%;
 }
@@ -90,4 +112,15 @@ a {
   width: 100% !important;
   position: relative !important;
   height: unset !important;
+}
+
+/* Utilities */
+.parallax {
+  /* The image used */
+  width: 100vw;
+  background-image: url("../public/assets/hero-bg.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -10,7 +10,7 @@ function Footer() {
   const { navLinks, logo, btnText } = nav;
 
   return (
-    <div className="flex justify-evenly items-center p-4 bg-gray-900 min-h-[10vh] gap-4">
+    <div className="flex justify-evenly items-center p-4 bg-neutral-900 min-h-[10vh] gap-4">
       <Logo logo={logo} />
       <div className="">
         <Links links={navLinks} />

@@ -4,6 +4,7 @@ import NewArrivals from "../components/home/NewArrivals";
 import Commissions from "../components/home/Commissions";
 import Newsletter from "../components/home/Newsletter";
 import data from "../data/data";
+import About from "../components/home/About";
 
 export default function Home() {
   const { hero, commissions, newArrivals, newsletter, products } = data;
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero hero={hero} />
       <div className="flex flex-col items-center px-4 md:px-28">
         <NewArrivals newArrivals={newArrivals} products={products} />
+        <About />
         <Commissions commissions={commissions} />
         <Newsletter newsletter={newsletter} />
       </div>

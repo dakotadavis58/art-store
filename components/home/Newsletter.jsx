@@ -5,7 +5,9 @@ import Input from "../Input";
 function Newsletter() {
   return (
     <section className="min-h-[20vh] flex flex-col p-8 min-w-full justify-center py-20">
-      <h1 className="text-3xl p-4 mx-auto text-center">Join Our Newsletter!</h1>
+      <h1 className="text-3xl p-4 mx-auto text-center drop-shadow-2xl">
+        Join Our Newsletter!
+      </h1>
       <div className="w-full flex justify-center gap-4">
         <Input
           type="email"

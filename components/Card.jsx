@@ -11,15 +11,18 @@ function Card({ product, newArrivals }) {
     reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length;
 
   return (
-    <article key={id} className="">
-      <div>
+    <article
+      key={id}
+      className="transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:border-opacity-10 pb-2"
+    >
+      <div className=" ">
         <Link href={`/products/${slug}`}>
           <Image
             src={img}
             alt={name}
             height={300}
             width={300}
-            style={{ borderTopLeftRadius: "2px", borderTopRightRadius: "2px" }}
+            className="rounded-t-md"
           />
 
           <div className="p-2 flex flex-col gap-1 items-start max-w-[18rem]">

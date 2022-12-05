@@ -15,7 +15,7 @@ function Nav() {
   };
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-black">
+    <nav className="flex justify-between items-center p-4 bg-neutral-900">
       <Logo logo={logo} />
       <Search />
       <Links links={navLinks} />
