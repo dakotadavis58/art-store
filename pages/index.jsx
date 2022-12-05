@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Commissions from "./index/Commissions";
-import Hero from "./index/Hero";
-import NewArrivals from "./index/NewArrivals";
-import Newsletter from "./index/Newsletter";
+import Hero from "../components/home/Hero";
+import NewArrivals from "../components/home/NewArrivals";
+import Commissions from "../components/home/Commissions";
+import Newsletter from "../components/home/Newsletter";
 import data from "../data/data";
 
 export default function Home() {

@@ -28,26 +28,94 @@ const data = {
     {
       id: 1,
       slug: "queeriosities1",
-      name: "Queeriosities",
+      name: "Queeriosities1",
       price: 10,
       image: "/public/assets/product.jpg",
       description: "The best place to buy",
+      reviews: [
+        {
+          id: 1,
+          name: "John Doe",
+          rating: 5,
+          comment: "This is a great product",
+        },
+
+        {
+          id: 2,
+          name: "Jane Doe",
+          rating: 4,
+          comment: "This is a great product",
+        },
+      ],
     },
     {
       id: 2,
       slug: "queeriosities2",
-      name: "Queeriosities",
+      name: "Queeriosities2",
       price: 10,
       image: "/public/assets/product.jpg",
       description: "The best place to buy",
+      reviews: [
+        {
+          id: 1,
+          name: "John Doe",
+          rating: 5,
+          comment: "This is a great product",
+        },
+
+        {
+          id: 2,
+          name: "Jane Doe",
+          rating: 4,
+          comment: "This is a great product",
+        },
+      ],
     },
     {
       id: 3,
-      name: "Queeriosities",
+      name: "Queeriosities3",
       slug: "queeriosities3",
       price: 10,
       image: "/public/assets/product.jpg",
       description: "The best place to buy",
+      reviews: [
+        {
+          id: 1,
+          name: "John Doe",
+          rating: 5,
+          comment: "This is a great product",
+        },
+
+        {
+          id: 2,
+          name: "Jane Doe",
+          rating: 4,
+          comment: "This is a great product",
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "Queeriosities4",
+      slug: "queeriosities4",
+      price: 10,
+      image: "/public/assets/product.jpg",
+      description: "The best place to buy",
+      reviews: [
+        {
+          id: 1,
+          name: "John Doe",
+          rating: 5,
+          comment: "This is a great product",
+        },
+
+        {
+          id: 2,
+          name: "Jane Doe",
+          rating: 4,
+          comment: "This is a great product",
+        },
+      ],
     },
   ],
   newArrivals: {

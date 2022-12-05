@@ -34,12 +34,16 @@ a {
   @apply flex justify-between items-center p-4 bg-black;
 }
 
+.newArrivals {
+  @apply hover:border-2 hover:border-primary;
+}
+
 .link {
-  @apply border-b-2 border-b-transparent
+  @apply border-b-2 border-b-transparent;
 }
 
 .activeLink {
-  @apply border-b-2 border-b-tertiary
+  @apply border-b-2 border-b-tertiary;
 }
 
 .btn {
@@ -60,12 +64,6 @@ a {
 
 .btn-rounded {
   @apply rounded-md;
-}
-
-.card {
-
-  @apply transition-all border-2 border-gray-700 rounded flex flex-col  hover:border-2 hover:border-primary
-
 }
 
 .main {
