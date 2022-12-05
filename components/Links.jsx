@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 function Links({ links }) {
   const router = useRouter();
   return (
-    <ul className="gap-14 hidden md:flex">
+    <ul className="gap-4 w-full max-w-md justify-between hidden md:flex m-2">
       {links.map((link) => {
         return (
           <li key={link.name}>

@@ -48,7 +48,7 @@ function Card({ product, newArrivals }) {
         </Link>
       </div>
       <div className="ml-2">
-        <Button className="" sm text={"+"}></Button>
+        <Button className="" rounded text={"+ Add To Cart"}></Button>
       </div>
     </article>
   );

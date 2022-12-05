@@ -10,7 +10,7 @@ const data = {
       alt: "Logo",
       text: "Queeriosities",
     },
-    btnText: "Shop",
+    btnText: "Shop Now",
   },
   hero: {
     title: "Queeriosities",

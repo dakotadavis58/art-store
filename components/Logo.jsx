@@ -7,7 +7,9 @@ function Logo({ logo, img }) {
   return (
     <Link href="/">
       <div className="flex justify-center items-center gap-4">
-        <Image src={img} alt={logo.alt} height={50} />
+        <div className="image-container max-w-[3rem] min-w-[3rem]">
+          <Image src={img} alt={logo.alt} fill className="image" />
+        </div>
         <h1 className="text-white text-2xl">{text}</h1>
       </div>
     </Link>

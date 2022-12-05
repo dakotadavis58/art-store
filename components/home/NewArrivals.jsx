@@ -9,7 +9,7 @@ function NewArrivals({ newArrivals, products }) {
       <h1 className="text-3xl font-bold text-center my-10">
         {newArrivals.title}
       </h1>
-      <div className="flex justify-between gap-8">
+      <div className="flex flex-col md:flex-row items-center md:flex-wrap justify-between gap-8">
         {products.map((product) => {
           return <Card newArrivals key={product.name} product={product} />;
         })}
