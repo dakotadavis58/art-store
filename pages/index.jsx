@@ -3,17 +3,20 @@ import Hero from "../components/home/Hero";
 import NewArrivals from "../components/home/NewArrivals";
 import Commissions from "../components/home/Commissions";
 import Newsletter from "../components/home/Newsletter";
-import data from "../data/data";
 import About from "../components/home/About";
 import SectionContainer from "../components/SectionContainer";
+import { useSiteData } from "../hooks/siteContext";
 
 export default function Home() {
-  const { hero, commissions, newArrivals, newsletter, products } = data;
+  const data = useSiteData();
+  const { hero, commissions, newArrivals, newsletter, products, seo } = data;
+  const { title, description, keywords } = seo.home;
   return (
     <div className="w-full h-full">
       <Head>
-        <title>Queeriosities</title>
-        <meta name="description" content="Art and homemode products" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords}></meta>
         <link rel="icon" href="/assets/logo.png" />
       </Head>
       <Hero hero={hero} />

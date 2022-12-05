@@ -31,6 +31,7 @@ function Nav({ handleOpen, open }) {
             <IoMdClose className="link text-4xl text-white" />
           </button>
         </div>
+        <Search />
         <Links className={"justify-evenly"} col mobile links={navLinks} />
       </div>
       <div className="flex gap-4 m-2">

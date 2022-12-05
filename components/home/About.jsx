@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import data from "../../data/data";
-import SectionContainer from "../SectionContainer";
+import Container from "../Container";
 
 function About() {
   const { about } = data;
   const { title, description, images } = about;
   return (
     <div className="flex flex-col items-center parallax gap-8">
-      <SectionContainer>
+      <Container>
         <div className="bg-neutral-800 text-white p-10 rounded-md flex flex-col gap-8 items-center m-4 max-w-4xl">
           <h2 className="text-3xl font-semibold">{title}</h2>
           <p className="w-full">{description}</p>
@@ -29,7 +29,7 @@ function About() {
             ))}
           </div>
         </div>
-      </SectionContainer>
+      </Container>
     </div>
   );
 }

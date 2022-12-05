@@ -2,7 +2,7 @@ const data = {
   nav: {
     navLinks: [
       { name: "Home", url: "/" },
-      { name: "Shop", url: "/shop" },
+      { name: "Shop", url: "/products" },
       { name: "About", url: "/about" },
       { name: "Contact", url: "/contact" },
     ],
@@ -151,6 +151,38 @@ const data = {
     title: "Contact Us",
     subtitle: "The best place to buy",
     btnText: "Send Message",
+  },
+  seo: {
+    home: {
+      title: "Queeriosities",
+      description: "The best place to buy",
+      keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
+    },
+    products: {
+      title: "Products",
+      description: "The best place to buy",
+      keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
+    },
+    about: {
+      title: "About",
+      description: "The best place to buy",
+      keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
+    },
+    contact: {
+      title: "Contact",
+      description: "The best place to buy",
+      keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
+    },
+    profile: {
+      title: "Profile",
+      description: "The best place to buy",
+      keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
+    },
+    cart: {
+      title: "Cart",
+      description: "The best place to buy",
+      keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
+    },
   },
 };
 
