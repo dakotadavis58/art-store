@@ -6,7 +6,9 @@ function Layout({ children }) {
   return (
     <>
       <Nav />
-      <main className="main w-screen">{children}</main>
+      <main className="w-screen min-h-screen flex items-center justify-center">
+        {children}
+      </main>
       <Footer />
     </>
   );
