@@ -54,7 +54,7 @@ function Card({ product, newArrivals, loading }) {
             <p className="text-sm font-normal ">{description}</p>
             <div className="flex justify-center items-center">
               <Rating
-                className="text-primary"
+                className="text-primary-main"
                 name="read-only"
                 value={rating}
                 readOnly

@@ -10,6 +10,8 @@ function Button({
   roundedFull,
   style,
   secondary,
+  children,
+  className,
 }) {
   return (
     <button
@@ -20,9 +22,9 @@ function Button({
         rounded && "btn-rounded"
       } ${roundedFull && "rounded-full"} ${
         outline && "bg-neutral-900 border-2 border-neutral"
-      } ${style}`}
+      } ${style && style} ${className && className}}`}
     >
-      {text}
+      {text} {children}
     </button>
   );
 }

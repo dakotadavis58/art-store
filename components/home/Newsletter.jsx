@@ -5,7 +5,7 @@ import Input from "../Input";
 function Newsletter() {
   return (
     <div className="min-h-[20vh] flex flex-col min-w-full w-screen justify-center items-center">
-      <div className="min-w-[20rem] py-2 bg-primary rounded-md bg-opacity-75 min-h-[8rem] coolShadow flex flex-col justify-center items-center">
+      <div className="min-w-[20rem] py-2 bg-primary-main rounded-md bg-opacity-75 min-h-[8rem] coolShadow flex flex-col justify-center items-center">
         <h1 className="text-3xl p-4 mx-auto text-center drop-shadow-2xl">
           Join Our Newsletter!
         </h1>

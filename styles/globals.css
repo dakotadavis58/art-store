@@ -33,7 +33,7 @@ img {
 
 /* Components */
 .newArrivals {
-  @apply hover:border-2 hover:border-primary;
+  @apply hover:border-2 hover:border-primary-main;
 }
 
 .hero {
@@ -67,19 +67,19 @@ img {
 /* Elements */
 
 .link {
-  @apply transition-all border-b-2 border-b-transparent hover:text-primary;
+  @apply transition-all border-b-2 border-b-transparent hover:text-primary-main;
 }
 
 .activeLink {
-  @apply border-b-2 border-b-secondary;
+  @apply border-b-2 border-b-secondary-main;
 }
 
 .btn-primary {
-  @apply bg-secondary hover:bg-primaryDark;
+  @apply bg-secondary-main hover:bg-primary-dark;
 }
 
 .btn-secondary {
-  @apply bg-primary hover:bg-secondaryDark;
+  @apply bg-primary-main hover:bg-secondary-dark;
 }
 
 .btn-sm {

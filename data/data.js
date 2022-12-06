@@ -152,6 +152,16 @@ const data = {
     subtitle: "The best place to buy",
     btnText: "Send Message",
   },
+  cart: {
+    title: "Your Cart",
+    subtitle: "The best place to buy",
+    btnText: "Checkout",
+  },
+  profile: {
+    title: "Your Profile",
+    subtitle: "The best place to buy",
+    btnText: "Update",
+  },
   seo: {
     home: {
       title: "Queeriosities",

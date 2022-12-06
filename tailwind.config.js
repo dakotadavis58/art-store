@@ -8,15 +8,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#8171FF",
-        primaryLight: "#AFAFFF",
-        primaryDark: "#40387F",
-        secondary: "#FF71A7",
-        secondaryLight: "#FFAFCF",
-        secondaryDark: "#FF4D8B",
-        tertiary: "#EFFF71",
-        tertiaryLight: "#FFFFAF",
-        tertiaryDark: "#DFFF4D",
+        primary: {
+          main: "#8171FF",
+          light: "#AFAFFF",
+          dark: "#40387F",
+        },
+        secondary: {
+          main: "#FF71A7",
+          light: "#FFAFCF",
+          dark: "#FF4D8B",
+        },
+        tertiary: {
+          main: "#EFFF71",
+          light: "#FFFFAF",
+          dark: "#DFFF4D",
+        },
         bgMain: "#000000",
         bgSecondary: "#111111",
       },
