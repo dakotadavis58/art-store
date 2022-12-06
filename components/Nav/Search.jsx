@@ -2,18 +2,18 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import Input from "../Input";
 
-function Search() {
+function Search({ mobile, placeholder, className }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
   };
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-neutral-800 ml-8 mr-4 hidden sm:flex rounded-md"
+      className={`bg-neutral-800 ml-8 mr-4 rounded-md ${className} }`}
     >
       <Input
         type="search"
+        placeHolder={placeholder}
         className="rounded-md mr-1 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary w-full"
       />
       <button className="rounded-r-md">

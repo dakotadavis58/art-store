@@ -7,7 +7,6 @@ import Search from "./Search";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
-import { IoMdClose } from "react-icons/io";
 
 function Nav({ handleOpen }) {
   const { navLinks, logo, btnText } = data.nav;
@@ -22,7 +21,7 @@ function Nav({ handleOpen }) {
 
   useEffect(() => {
     document.addEventListener("mousedown", (e) => {
-      if (!menuRef.current.contains(e.target)) {
+      if (menuRef?.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     });
@@ -35,7 +34,7 @@ function Nav({ handleOpen }) {
   return (
     <nav className="flex justify-between items-center p-4 bg-neutral-900">
       <Logo logo={logo} />
-      <Search />
+      <Search className={"hidden md:flex"} placeholder={"Search stuff..."} />
       <Links links={navLinks} handleClick={handleClick} />
       <div className="flex gap-4 m-2">
         <Link
@@ -56,17 +55,16 @@ function Nav({ handleOpen }) {
             <BsCart2 className="text-3xl" />
           </div>
         </Link>
-        <div className="relative">
+        <div className="relative" ref={menuRef}>
           <button className="md:hidden link" onClick={(e) => handleClick(e)}>
             <BiMenu className="text-4xl" />
           </button>
           <div
-            ref={menuRef}
-            className={`absolute right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-neutral-800 drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
+            className={`absolute md:hidden flex flex-col py-4 gap-2 right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-neutral-900 drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
               isOpen ? "" : "hidden"
             }`}
           >
-            <Search />
+            <Search placeholder={"Search stuff..."} className={"flex"} />
             <Links className={"justify-evenly"} col mobile links={navLinks} />
           </div>
         </div>

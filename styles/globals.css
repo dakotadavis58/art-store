@@ -21,8 +21,9 @@ a {
 }
 
 body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
   color: white;
-  @apply bg-neutral-900;
   @apply overscroll-none;
 }
 
@@ -40,7 +41,7 @@ img {
 
 .heroImg {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)),
     url("../public/assets/hero-bg.jpeg");
 
   /* Set a specific height */
@@ -55,26 +56,12 @@ img {
 }
 
 .card {
-  box-shadow: 2.7px 2.3px 2.2px rgba(0, 0, 0, 0.04),
-    6.5px 5.5px 5.3px rgba(0, 0, 0, 0.052),
-    12.3px 10.3px 10px rgba(0, 0, 0, 0.058),
-    21.9px 18.3px 17.9px rgba(0, 0, 0, 0.062),
-    40.9px 34.3px 33.4px rgba(0, 0, 0, 0.065),
-    98px 82px 80px rgba(0, 0, 0, 0.07);
   background: rgb(48, 48, 48);
   background: radial-gradient(
     circle,
     rgba(48, 48, 48, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-}
-.card:hover {
-  box-shadow: 4.6px 3.7px 2.2px rgba(0, 0, 0, 0.092),
-    11px 8.8px 5.3px rgba(0, 0, 0, 0.118),
-    20.8px 16.7px 10px rgba(0, 0, 0, 0.133),
-    37.1px 29.7px 17.9px rgba(0, 0, 0, 0.142),
-    69.4px 55.6px 33.4px rgba(0, 0, 0, 0.149),
-    166px 133px 80px rgba(0, 0, 0, 0.16);
 }
 
 /* Elements */
@@ -110,6 +97,8 @@ img {
 .image-container {
   width: 100%;
   overflow: hidden;
+  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.2);
+  drop-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.2);
   @apply rounded-md;
 }
 
@@ -149,4 +138,7 @@ img {
     21.9px 18.3px 17.9px rgba(0, 0, 0, 0.062),
     40.9px 34.3px 33.4px rgba(0, 0, 0, 0.065),
     98px 82px 80px rgba(0, 0, 0, 0.07);
+}
+
+.confetti {
 }

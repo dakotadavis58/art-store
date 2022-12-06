@@ -22,6 +22,7 @@ function Commissions() {
           text={"Contact Us"}
           onClick={handleClick}
           rounded
+          secondary
           className=""
         ></Button>
       </div>

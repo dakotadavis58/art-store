@@ -4,19 +4,41 @@ import Link from "next/link";
 import React from "react";
 import Button from "./Button";
 import img from "/public/assets/product.jpg";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function Card({ product, newArrivals, loading }) {
+  const [showLike, setShowLike] = React.useState(false);
+  const [liked, setLiked] = React.useState(false);
   const { id, slug, name, price, description, reviews } = product;
   const rating =
     reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length;
-
+  ("");
+  const handleLike = (e) => {
+    e.preventDefault();
+    setLiked(!liked);
+  };
   return (
     <article
       key={id}
-      className={` transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:border-opacity-10 pb-2 ${
+      onMouseEnter={() => setShowLike(true)}
+      onMouseLeave={() => setShowLike(false)}
+      className={`relative max-w-fit transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:shadow-2xl hover:drop-shadow-2xl pb-2 ${
         loading ? "animate-pulse" : ""
       }`}
     >
+      <div className="absolute top-0 right-0 m-2">
+        <button
+          className={`${!showLike && "hidden"}`}
+          onClick={(e) => handleLike(e)}
+        >
+          {liked ? (
+            <FavoriteIcon className="text-3xl text-primary" />
+          ) : (
+            <FavoriteBorderIcon className="text-3xl text-primary" />
+          )}
+        </button>
+      </div>
       <div className=" ">
         <Link href={`/products/${slug}`}>
           <Image
@@ -37,6 +59,8 @@ function Card({ product, newArrivals, loading }) {
                 value={rating}
                 readOnly
                 precision={0.25}
+                icon={<FavoriteIcon fontSize={"inherit"} />}
+                emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
               />
               {reviews.length > 0 && (
                 <p className="text-sm font-normal ml-2">({reviews.length})</p>
@@ -53,7 +77,7 @@ function Card({ product, newArrivals, loading }) {
         </Link>
       </div>
       <div className="ml-2">
-        <Button className="" rounded text={"+ Add To Cart"}></Button>
+        <Button className="" secondary rounded text={"+ Add To Cart"}></Button>
       </div>
     </article>
   );
