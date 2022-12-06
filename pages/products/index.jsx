@@ -10,7 +10,7 @@ function Products() {
   const { products: productsSEO } = data.seo;
   const { title, description, keywords } = productsSEO;
   return (
-    <div className="w-full h-full px-10 py md:px-48">
+    <div className="w-full h-full px-10">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />

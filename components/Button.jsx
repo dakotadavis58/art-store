@@ -14,7 +14,7 @@ function Button({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 hover:shadow-xl text-white transition-all ${
+      className={`px-4 py-2 hover:shadow-xl text-white font-medium transition-all ${
         primary && "btn-primary"
       } ${secondary && "btn-secondary"} ${sm && "btn-sm"} ${
         rounded && "btn-rounded"

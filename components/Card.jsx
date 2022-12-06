@@ -39,13 +39,13 @@ function Card({ product, newArrivals, loading }) {
           )}
         </button>
       </div>
-      <div className=" ">
+      <div className="">
         <Link href={`/products/${slug}`}>
           <Image
             src={img}
             alt={name}
-            height={300}
-            width={300}
+            height={260}
+            width={260}
             className="rounded-t-md"
           />
 
