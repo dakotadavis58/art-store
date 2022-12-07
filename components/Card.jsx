@@ -59,7 +59,12 @@ function Card({ product, newArrivals, loading }) {
                 value={rating}
                 readOnly
                 precision={0.25}
-                icon={<FavoriteIcon fontSize={"inherit"} />}
+                icon={
+                  <FavoriteIcon
+                    className="text-primary-main"
+                    fontSize={"inherit"}
+                  />
+                }
                 emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
               />
               {reviews.length > 0 && (

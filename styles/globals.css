@@ -39,6 +39,11 @@ img {
 .hero {
 }
 
+.newsLetter {
+  background-image: url("../public/assets/blue-squiggles.jpeg");
+  background-size: contain;
+}
+
 .heroImg {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)),
@@ -97,9 +102,8 @@ img {
 .image-container {
   width: 100%;
   overflow: hidden;
-  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.2);
-  drop-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.2);
-  @apply rounded-md;
+
+  @apply rounded-md shadow-xl drop-shadow-2xl;
 }
 
 .image-container > img {
