@@ -26,7 +26,7 @@ function Commissions() {
           className=""
         ></Button>
       </div>
-      <div className="right rounded-md flex-1 p-4 flex justify-center items-center h-full">
+      <div className="right rounded-md flex-1 flex justify-center items-center h-full">
         <div className="image-container rounded-md min-h-[20rem] max-h-[40rem]">
           <Image
             alt="Space fox"

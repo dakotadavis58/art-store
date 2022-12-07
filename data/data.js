@@ -28,16 +28,16 @@ const data = {
   products: [
     {
       id: 1,
-      slug: "queeriosities1",
-      name: "Queeriosities1",
-      price: 10,
-      image: "/public/assets/product.jpg",
-      description: "The best place to buy",
+      slug: "fujifilm-camera",
+      name: "Fujifilm Camera",
+      price: 209.99999,
+      image: "/assets/product.jpg",
+      description: "A camera that takes great photos",
       reviews: [
         {
           id: 1,
           name: "John Doe",
-          rating: 5,
+          rating: 1,
           comment: "This is a great product",
         },
 
@@ -51,11 +51,11 @@ const data = {
     },
     {
       id: 2,
-      slug: "queeriosities2",
-      name: "Queeriosities2",
+      slug: "digital-watch",
+      name: "Digital Watch",
       price: 10,
-      image: "/public/assets/product.jpg",
-      description: "The best place to buy",
+      image: "/assets/product1.jpg",
+      description: " A watch that tells time",
       reviews: [
         {
           id: 1,
@@ -67,18 +67,18 @@ const data = {
         {
           id: 2,
           name: "Jane Doe",
-          rating: 4,
+          rating: 5,
           comment: "This is a great product",
         },
       ],
     },
     {
       id: 3,
-      name: "Queeriosities3",
-      slug: "queeriosities3",
+      name: "Sunglasses",
+      slug: "sunglasses",
       price: 10,
-      image: "/public/assets/product.jpg",
-      description: "The best place to buy",
+      image: "/assets/product2.jpg",
+      description: "Sunglasses that block out the sun's rays",
       reviews: [
         {
           id: 1,
@@ -100,7 +100,7 @@ const data = {
       name: "Queeriosities4",
       slug: "queeriosities4",
       price: 10,
-      image: "/public/assets/product.jpg",
+      image: "/assets/product3.jpg",
       description: "The best place to buy",
       reviews: [
         {

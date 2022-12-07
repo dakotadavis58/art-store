@@ -25,6 +25,14 @@ function Nav({ handleOpen }) {
         setIsOpen(false);
       }
     });
+
+    return () => {
+      document.removeEventListener("mousedown", (e) => {
+        if (menuRef?.current && !menuRef.current.contains(e.target)) {
+          setIsOpen(false);
+        }
+      });
+    };
   });
 
   useEffect(() => {

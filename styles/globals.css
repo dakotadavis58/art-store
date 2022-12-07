@@ -41,7 +41,7 @@ img {
 
 .newsLetter {
   background-image: url("../public/assets/blue-squiggles.jpeg");
-  background-size: contain;
+  background-size: fill;
 }
 
 .heroImg {
@@ -144,5 +144,22 @@ img {
     98px 82px 80px rgba(0, 0, 0, 0.07);
 }
 
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* truncate to 4 lines */
+  -webkit-line-clamp: 1;
+}
+
+
+
 .confetti {
+}
+
+
+.dropdown-content button {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
