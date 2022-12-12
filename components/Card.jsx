@@ -26,7 +26,7 @@ function Card({ product, newArrivals, loading }) {
         setShowLike(true);
       }}
       onMouseLeave={() => setShowLike(false)}
-      className={`relative max-w-fit transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:shadow-2xl hover:drop-shadow-2xl pb-2 ${
+      className={`relative flex-grow basis-1/5 max-w-1/5 sm:flex-grow  transition-all rounded-md card bg-neutral-800 border-2 border-transparent hover:shadow-2xl hover:drop-shadow-2xl pb-2 ${
         loading ? "animate-pulse" : ""
       }`}
     >
@@ -44,14 +44,14 @@ function Card({ product, newArrivals, loading }) {
       </div>
       <div className="">
         <Link href={`/products/${slug}`}>
-          <div className=" overflow-hidden max-h-56 xs:max-w-xs rounded-md">
-            <div className="image-container">
-              <Image src={image} alt={name} fill className=" imageCover" />
+          <div className=" overflow-hidden rounded-md ">
+            <div className="image-container aspect-4/3">
+              <Image src={image} alt={name} fill className=" imageContain" />
             </div>
           </div>
 
           <div className="p-2 flex flex-col gap-1 items-start max-w-[18rem]">
-            <h2 className="text-xl font-bold">{name}</h2>
+            <h2 className="text-xl font-bold line-clamp-1">{name}</h2>
             <p className="text-sm font-normal line-clamp-1">{description}</p>
             <div className="flex justify-center items-center">
               <Rating

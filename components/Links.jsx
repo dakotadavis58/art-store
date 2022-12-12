@@ -6,7 +6,7 @@ function Links({ links, col, mobile, className, handleClick }) {
   const router = useRouter();
   return (
     <ul
-      className={`gap-4 w-full h-full max-w-md justify-between md:flex m-2 ${
+      className={`gap-4 w-full h-full max-w-md justify-between lg:flex m-2 ${
         className ? className : ""
       } ${mobile ? "flex" : "hidden"} ${col ? "flex-col" : ""}`}
     >

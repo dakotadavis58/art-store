@@ -42,7 +42,7 @@ function Nav({ handleOpen }) {
   return (
     <nav className="flex justify-between items-center p-4 bg-neutral-900">
       <Logo logo={logo} />
-      <Search className={"hidden md:flex"} placeholder={"Search stuff..."} />
+      <Search className={"hidden lg:flex"} placeholder={"Search stuff..."} />
       <Links links={navLinks} handleClick={handleClick} />
       <div className="flex gap-4 m-2">
         <Link
@@ -64,11 +64,11 @@ function Nav({ handleOpen }) {
           </div>
         </Link>
         <div className="relative" ref={menuRef}>
-          <button className="md:hidden link" onClick={(e) => handleClick(e)}>
+          <button className="lg:hidden link" onClick={(e) => handleClick(e)}>
             <BiMenu className="text-4xl" />
           </button>
           <div
-            className={`absolute md:hidden flex flex-col py-4 gap-2 right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-neutral-900 drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
+            className={`absolute lg:hidden flex flex-col py-4 gap-2 right-0 z-[1000] mt-2 w-56 origin-top-right rounded-md bg-neutral-900 drop-shadow-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  ${
               isOpen ? "" : "hidden"
             }`}
           >
