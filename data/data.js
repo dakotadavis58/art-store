@@ -48,12 +48,13 @@ const data = {
           comment: "This is a great product",
         },
       ],
+      date: "2021-04-01",
     },
     {
       id: 2,
       slug: "digital-watch",
       name: "Digital Watch",
-      price: 10,
+      price: 2.56,
       image: "/assets/product1.jpg",
       description: " A watch that tells time",
       reviews: [
@@ -71,12 +72,13 @@ const data = {
           comment: "This is a great product",
         },
       ],
+      date: "2021-05-01",
     },
     {
       id: 3,
       name: "Sunglasses",
       slug: "sunglasses",
-      price: 10,
+      price: 25.89,
       image: "/assets/product2.jpg",
       description: "Sunglasses that block out the sun's rays",
       reviews: [
@@ -94,12 +96,13 @@ const data = {
           comment: "This is a great product",
         },
       ],
+      date: "2022-05-02",
     },
     {
       id: 4,
-      name: "Queeriosities4",
+      name: "Sneakers",
       slug: "queeriosities4",
-      price: 10,
+      price: 19.99,
       image: "/assets/product3.jpg",
       description: "The best place to buy",
       reviews: [
@@ -117,7 +120,77 @@ const data = {
           comment: "This is a great product",
         },
       ],
+      date: "2022-11-03",
     },
+    // {
+    //   id: 5,
+    //   name: "Queeriosities4",
+    //   slug: "queeriosities4",
+    //   price: 10,
+    //   image: "/assets/product3.jpg",
+    //   description: "The best place to buy",
+    //   reviews: [
+    //     {
+    //       id: 1,
+    //       name: "John Doe",
+    //       rating: 5,
+    //       comment: "This is a great product",
+    //     },
+
+    //     {
+    //       id: 2,
+    //       name: "Jane Doe",
+    //       rating: 4,
+    //       comment: "This is a great product",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: 6,
+    //   name: "Queeriosities4",
+    //   slug: "queeriosities4",
+    //   price: 10,
+    //   image: "/assets/product3.jpg",
+    //   description: "The best place to buy",
+    //   reviews: [
+    //     {
+    //       id: 1,
+    //       name: "John Doe",
+    //       rating: 5,
+    //       comment: "This is a great product",
+    //     },
+
+    //     {
+    //       id: 2,
+    //       name: "Jane Doe",
+    //       rating: 4,
+    //       comment: "This is a great product",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: 7,
+    //   name: "Queeriosities4",
+    //   slug: "queeriosities4",
+    //   price: 10,
+    //   image: "/assets/product3.jpg",
+    //   description: "The best place to buy",
+    //   reviews: [
+    //     {
+    //       id: 1,
+    //       name: "John Doe",
+    //       rating: 5,
+    //       comment: "This is a great product",
+    //     },
+
+    //     {
+    //       id: 2,
+    //       name: "Jane Doe",
+    //       rating: 4,
+    //       comment: "This is a great product",
+    //     },
+    //   ],
+    // },
   ],
   newArrivals: {
     title: "New Arrivals!",
@@ -147,6 +220,62 @@ const data = {
       },
     ],
   },
+  productsPage: {
+    title: "Products",
+    subtitle: "The best place to buy",
+    filters: [
+      {
+        id: 1,
+        name: "Price",
+        options: [
+          {
+            id: 2,
+            name: "Under $25",
+            value: "under25",
+          },
+          {
+            id: 3,
+            name: "Under $50",
+            value: "under50",
+          },
+          {
+            id: 4,
+            name: "$50 - $100",
+            value: "50to100",
+          },
+        ],
+      },
+    ],
+    sorts: [
+      {
+        id: 1,
+        name: "Sort By",
+        options: [
+          {
+            id: 2,
+            name: "Price: Low to High",
+            value: "lowToHigh",
+          },
+          {
+            id: 3,
+            name: "Price: High to Low",
+            value: "highToLow",
+          },
+          {
+            id: 4,
+            name: "Most Recent",
+            value: "mostRecent",
+          },
+          {
+            id: 1,
+            name: "Featured",
+            value: "featured",
+          },
+        ],
+      },
+    ],
+  },
+
   contact: {
     title: "Contact Us",
     subtitle: "The best place to buy",

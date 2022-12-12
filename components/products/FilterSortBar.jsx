@@ -3,10 +3,22 @@ import Button from "../Button";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import TuneIcon from "@mui/icons-material/Tune";
 import FilterListIcon from "@mui/icons-material/FilterList";
+import { useSiteData } from "../../hooks/siteContext";
+import CloseIcon from "@mui/icons-material/Close";
+import { Chip } from "@mui/material";
 
-function FilterSortBar() {
+function FilterSortBar({
+  filters,
+  sorts,
+  activeFilters,
+  handleDeleteFilter,
+  handleAddFilter,
+  handleChangeSort,
+}) {
   const [showFilter, setShowFilter] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
+
+  const data = useSiteData();
 
   useEffect(() => {
     window.onclick = function (event) {
@@ -27,7 +39,9 @@ function FilterSortBar() {
   return (
     <div className="w-full">
       <div className="w-full h-10 flex justify-between items-center">
+        {/* Filter Dropdown */}
         <div className="dropdown inline-block relative">
+          {/* The overall button container */}
           <Button
             roundedFull
             outline
@@ -51,12 +65,25 @@ function FilterSortBar() {
               showFilter ? "absolute" : "hidden"
             }`}
           >
-            <button href="#">Price: Low to High</button>
-            <button href="#">Price: High to Low</button>
-            <button href="#">Newest</button>
-            <button href="#">Oldest</button>
+            {filters.map((filter) => (
+              <div key={filter.name}>
+                {filter.options.map((option) => (
+                  <button
+                    key={option.name + "1"}
+                    value={option.value}
+                    className={`w-full`}
+                    href="#"
+                    onClick={(e) => handleAddFilter(e)}
+                  >
+                    {option.name}
+                  </button>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Sort Dropdown */}
         <div className="dropdown relative inline-block">
           <Button
             roundedFull
@@ -81,11 +108,45 @@ function FilterSortBar() {
               showSort ? "absolute" : "hidden"
             }`}
           >
-            <button href="#">Price: Low to High</button>
-            <button href="#">Price: High to Low</button>
-            <button href="#">Newest</button>
-            <button href="#">Oldest</button>
+            {sorts.map((sort) => (
+              <div key={sort.name}>
+                {sort.options.map((option) => (
+                  <button
+                    value={option.value}
+                    onClick={(e) => handleChangeSort(e)}
+                    key={option.name}
+                    className={`w-full`}
+                    href="#"
+                  >
+                    {option.name}
+                  </button>
+                ))}
+              </div>
+            ))}
           </div>
+        </div>
+      </div>
+      {/* Active Filters and Sorts */}
+      <div className="w-full min-h-10 py-1 flex flex-wrap justify-between">
+        <div className="flex py-2">
+          {activeFilters.filters.map((filter) => (
+            <div key={filter}>
+              <Chip
+                className="bg-primary-main text-white hover:bg-primary-dark"
+                label={filter}
+                variant="outlined"
+                onDelete={() => handleDeleteFilter(filter)}
+                onClick={() => handleDeleteFilter(filter)}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-end py-1">
+          <Chip
+            className="bg-primary-main text-white"
+            label={activeFilters.sorts}
+            variant="outlined"
+          />
         </div>
       </div>
     </div>

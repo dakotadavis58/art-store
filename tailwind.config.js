@@ -8,7 +8,7 @@ module.exports = {
   safelist: ["border-b-2", "border-b-tertiary"],
   theme: {
     screens: {
-      xs: "400px",
+      xs: "350px",
       ...defaultTheme.screens,
     },
     extend: {

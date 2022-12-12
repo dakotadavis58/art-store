@@ -22,7 +22,6 @@ function Card({ product, newArrivals, loading }) {
     <article
       key={id}
       onMouseEnter={() => {
-        console.log("mouse enter");
         setShowLike(true);
       }}
       onMouseLeave={() => setShowLike(false)}
@@ -32,7 +31,7 @@ function Card({ product, newArrivals, loading }) {
     >
       <div className="absolute top-0 right-0 m-2  z-50">
         <button
-          className={` ${showLike ? "inline-block" : "hidden"}`}
+          className={`${showLike ? "inline-block" : "hidden"}`}
           onClick={(e) => handleLike(e)}
         >
           {liked ? (
@@ -45,7 +44,7 @@ function Card({ product, newArrivals, loading }) {
       <div className="">
         <Link href={`/products/${slug}`}>
           <div className=" overflow-hidden rounded-md ">
-            <div className="image-container aspect-4/3">
+            <div className="image-container aspect-4/3 sm:max-h-[9rem] md:[11rem] lg:max-h-[14rem]">
               <Image src={image} alt={name} fill className=" imageContain" />
             </div>
           </div>
