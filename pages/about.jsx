@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React from "react";
+import TwoColSection from "../components/Layout/TwoColSection";
 import { useSiteData } from "../hooks/siteContext";
+import SectionContainer from "../components/SectionContainer";
 
 function About() {
   const data = useSiteData();
@@ -15,12 +17,16 @@ function About() {
         <link rel="icon" href="/assets/logo.png" />
       </Head>
       <h1 className="text-4xl">About Us</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis soluta
-        earum, quidem officiis reiciendis natus id dolorem eius totam recusandae
-        dolor odio perferendis esse itaque! Distinctio, nobis quae. Natus,
-        fugit.
-      </p>
+      <SectionContainer>
+        <div className=" w-screen min-h-[300px] ">
+          <TwoColSection />
+        </div>
+      </SectionContainer>
+      <SectionContainer>
+        <div className=" w-screen min-h-[300px] ">
+          <TwoColSection reverse />
+        </div>
+      </SectionContainer>
     </div>
   );
 }
