@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { useSiteData } from "../hooks/siteContext";
 import AddProduct from "../components/admin/AddProduct";
+import Image from "next/image";
 
 function Admin() {
   const [products, setProducts] = useState([]);
@@ -46,7 +47,16 @@ function Admin() {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.description}</td>
-                  <td>{product.image}</td>
+                  <td>
+                    <div className="max-w-[5rem]">
+                      <Image
+                        className="imageContain"
+                        alt={product.name}
+                        src={product.image}
+                        fill
+                      />
+                    </div>
+                  </td>
                   <td>{product.category}</td>
                   <td>{product.stock}</td>
                   <td>{product.featured ? "Yes" : "No"}</td>

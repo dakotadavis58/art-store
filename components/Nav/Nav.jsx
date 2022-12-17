@@ -7,8 +7,10 @@ import Search from "./Search";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
+import { useSession } from "next-auth/react";
 
 function Nav({ handleOpen }) {
+  const { data: session } = useSession();
   const { navLinks, logo, btnText } = data.nav;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);

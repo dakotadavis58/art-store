@@ -9,14 +9,13 @@ function ProductDetailsPage() {
   const { slug } = router.query;
   const { products } = data;
   const find = products.find((product) => product.slug === slug);
-  console.log(find);
 
   useEffect(() => {
     setProduct(find);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-  }, []);
+  }, [find]);
 
   return loading ? (
     <div>Loading</div>

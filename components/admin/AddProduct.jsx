@@ -17,7 +17,7 @@ function AddProduct() {
       description: "",
       image: "",
       category: "",
-      stockNum: "",
+      stock: "",
       featured: false,
     },
   });
@@ -34,7 +34,9 @@ function AddProduct() {
 
   return (
     <div className="flex flex-col items-start ">
-      <button onClick={() => setShowAdd(!showAdd)}>Add Product</button>
+      <Button outline onClick={() => setShowAdd(!showAdd)}>
+        Add Product
+      </Button>
       <div className="bg-neutral-800">
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -113,7 +115,9 @@ function AddProduct() {
             id="featured"
           />
 
-          <Button type="submit">Add Product</Button>
+          <Button primary type="submit">
+            Add Product
+          </Button>
         </form>
       </div>
     </div>

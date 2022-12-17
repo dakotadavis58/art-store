@@ -1,9 +1,12 @@
 import Head from "next/head";
 import React from "react";
 import { useSiteData } from "../hooks/siteContext";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 function Profile() {
   const data = useSiteData();
+  const { data: session } = useSession();
   const { profile } = data.seo;
   const { title, description, keywords } = profile;
   return (
@@ -16,12 +19,30 @@ function Profile() {
       </Head>
 
       <h1 className="text-4xl">Profile</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus id
-        facere nulla quaerat ipsam voluptas esse architecto at aliquam dolorem
-        iusto reprehenderit repellat praesentium, velit facilis modi saepe quo
-        corrupti?
-      </p>
+      {session ? (
+        <>
+          <div className="flex gap-2">
+            <div>
+              <Image
+                src={session.user.image}
+                alt={session.user.name}
+                fill
+                className="imageCover"
+              />
+            </div>
+            <div className="flex flex-col items-start gap-1">
+              <div>{session.user.name}</div>
+              <div>{session.user.email}</div>
+            </div>
+          </div>
+          <button onClick={() => signOut()}>Sign out</button>
+        </>
+      ) : (
+        <>
+          Not signed in <br />
+          <button onClick={() => signIn()}>Sign in</button>
+        </>
+      )}
     </div>
   );
 }
