@@ -43,7 +43,7 @@ function Nav({ handleOpen }) {
     <nav className="flex justify-between items-center p-4 bg-neutral-900">
       <Logo logo={logo} />
       <Search className={"hidden lg:flex"} placeholder={"Search stuff..."} />
-      <Links links={navLinks} handleClick={handleClick} />
+      <Links admin links={navLinks} handleClick={handleClick} />
       <div className="flex gap-4 m-2">
         <Link
           href={"/profile"}

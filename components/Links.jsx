@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-function Links({ links, col, mobile, className, handleClick }) {
+function Links({ links, col, mobile, className, handleClick, admin }) {
   const router = useRouter();
   return (
     <ul
@@ -25,6 +25,18 @@ function Links({ links, col, mobile, className, handleClick }) {
           </li>
         );
       })}
+      {admin && (
+        <li>
+          <Link
+            href={"/admin"}
+            className={`link ${
+              router.pathname === "/admin" ? "activeLink" : ""
+            }`}
+          >
+            Admin
+          </Link>
+        </li>
+      )}
     </ul>
   );
 }
