@@ -34,15 +34,10 @@ function AddProduct() {
 
   return (
     <div className="flex flex-col items-start ">
-      <Button outline onClick={() => setShowAdd(!showAdd)}>
-        Add Product
-      </Button>
       <div className="bg-neutral-800">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className={`${
-            showAdd ? "flex" : "hidden"
-          } p-4 flex-col items-start gap-1 text-black `}
+          className={`flex p-4 flex-col items-start gap-1 text-black `}
         >
           <label htmlFor="name">Name</label>
           <input

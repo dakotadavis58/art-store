@@ -3,12 +3,19 @@ import Button from "../components/Button";
 import { useSiteData } from "../hooks/siteContext";
 import AddProduct from "../components/admin/AddProduct";
 import Image from "next/image";
+import ProductsTable from "../components/admin/ProductsTable";
 
 function Admin() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [tab, setTab] = useState("allProducts");
   const siteData = useSiteData();
   const { products: dummyProducts } = siteData;
+
+  const openTab = (e) => {
+    setTab(e.target.id);
+    console.log(tab);
+  };
 
   useEffect(() => {
     try {
@@ -18,58 +25,39 @@ function Admin() {
       console.log(error);
     }
   }, [dummyProducts]);
+
   return (
     <div className="">
-      <h1>Admin</h1>
+      <h1 className="text-center text-3xl font-medium">Admin</h1>
       <div>
-        <h2>Products</h2>
-        <table className="bg-neutral-800">
-          <thead>
-            <tr className="">
-              <th>Name</th>
-              <th>Price</th>
-              <th>Description</th>
-              <th>Image</th>
-              <th>Category</th>
-              <th>Stock</th>
-              <th>Featured</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {loading ? (
-              <tr>
-                <td>Loading...</td>
-              </tr>
-            ) : (
-              products.map((product) => (
-                <tr key={product.id}>
-                  <td>{product.name}</td>
-                  <td>{product.price}</td>
-                  <td>{product.description}</td>
-                  <td>
-                    <div className="max-w-[5rem]">
-                      <Image
-                        className="imageContain"
-                        alt={product.name}
-                        src={product.image}
-                        fill
-                      />
-                    </div>
-                  </td>
-                  <td>{product.category}</td>
-                  <td>{product.stock}</td>
-                  <td>{product.featured ? "Yes" : "No"}</td>
-                  <td>
-                    <Button primary>Edit</Button>
-                    <Button outline>Delete</Button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-        <div>
+        {/* Tabs that will have each function an admin will want to do */}
+        <div className="tab flex flex-col lg:absolute top-24  md:left-10">
+          <button
+            id="allProducts"
+            className="tablinks p-2 pt-0"
+            onClick={(e) => openTab(e)}
+          >
+            All Products
+          </button>
+          <button
+            id="addProduct"
+            className="tablinks p-2"
+            onClick={(e) => openTab(e)}
+          >
+            Add Product
+          </button>
+          <button
+            id="allOrders"
+            className="tablinks p-2"
+            onClick={(e) => openTab(e)}
+          >
+            All Orders
+          </button>
+        </div>
+        <div className={`${tab === "allProducts" ? "flex" : "hidden"}`}>
+          <ProductsTable loading={loading} products={products} />
+        </div>
+        <div className={`${tab === "addProduct" ? "flex" : "hidden"}`}>
           <AddProduct />
         </div>
       </div>
