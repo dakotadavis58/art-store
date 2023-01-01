@@ -33,6 +33,8 @@ const data = {
       price: 209.99999,
       image: "/assets/product.jpg",
       description: "A camera that takes great photos",
+      stock: 10,
+      category: "Electronics",
       reviews: [
         {
           id: 1,

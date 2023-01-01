@@ -75,7 +75,13 @@ function Nav({ handleOpen }) {
             }`}
           >
             <Search placeholder={"Search stuff..."} className={"flex"} />
-            <Links className={"justify-evenly"} col mobile links={navLinks} />
+            <Links
+              admin
+              className={"justify-evenly"}
+              col
+              mobile
+              links={navLinks}
+            />
           </div>
         </div>
       </div>

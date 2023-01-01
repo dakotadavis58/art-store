@@ -38,6 +38,17 @@ img {
 
 .hero {
 }
+.table-cell {
+  padding: 0 15px;
+}
+
+.table-head > div {
+  padding: 0 15px;
+}
+
+.table-row > div {
+  padding: 0 15px;
+}
 
 .newsLetter {
   background-image: url("../public/assets/blue-squiggles.jpeg");
@@ -152,11 +163,8 @@ img {
   -webkit-line-clamp: 1;
 }
 
-
-
 .confetti {
 }
-
 
 .dropdown-content button {
   padding: 12px 16px;

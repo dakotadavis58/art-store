@@ -1,15 +1,22 @@
 import React from "react";
 
-function Input({ type, placeHolder, className }) {
-  return (
-    <input
-      type={type}
-      placeholder={placeHolder}
-      className={`bg-neutral-800 drop-shadow-xl shadow-xl rounded-md mr-1 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary w-full ${
-        className ? className : ""
-      }`}
-    />
-  );
-}
+const Input = React.forwardRef(
+  ({ label, onChange, className, lg, ...rest }, ref) => {
+    return (
+      <div>
+        <label>{label}</label>
+        <input
+          ref={ref}
+          className={`max-w-sm bg-neutral-800 drop-shadow-xl shadow-xl rounded-md mr-1 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary w-full ${
+            className ? className : ""
+          }`}
+          {...rest}
+        />
+      </div>
+    );
+  }
+);
+
+Input.displayName = "Input";
 
 export default Input;

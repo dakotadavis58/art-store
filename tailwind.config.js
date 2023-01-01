@@ -10,6 +10,7 @@ module.exports = {
     screens: {
       xs: "350px",
       ...defaultTheme.screens,
+      xl: "1440px",
     },
     extend: {
       aspectRatio: {

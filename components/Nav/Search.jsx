@@ -13,7 +13,7 @@ function Search({ mobile, placeholder, className }) {
     >
       <Input
         type="search"
-        placeHolder={placeholder}
+        placeholder={placeholder}
         className="rounded-md mr-1 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-main w-full"
       />
       <button className="rounded-r-md">

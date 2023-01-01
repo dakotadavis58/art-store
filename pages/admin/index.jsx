@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Button from "../components/Button";
-import { useSiteData } from "../hooks/siteContext";
-import AddProduct from "../components/admin/AddProduct";
+import { useSiteData } from "../../hooks/siteContext";
+import AddProduct from "../../components/admin/AddProduct";
 import Image from "next/image";
-import ProductsTable from "../components/admin/ProductsTable";
+import ProductsTable from "../../components/admin/ProductsTable";
 
 function Admin() {
   const [products, setProducts] = useState([]);
@@ -31,10 +30,10 @@ function Admin() {
       <h1 className="text-center text-3xl font-medium">Admin</h1>
       <div>
         {/* Tabs that will have each function an admin will want to do */}
-        <div className="tab flex flex-col lg:absolute top-24  md:left-10">
+        <div className="tab flex justify-center xl:flex-col xl:absolute top-24  xl:left-10">
           <button
             id="allProducts"
-            className="tablinks p-2 pt-0"
+            className="tablinks p-2 xl:pt-0"
             onClick={(e) => openTab(e)}
           >
             All Products
