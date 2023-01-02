@@ -3,6 +3,8 @@ import { Poppins } from "@next/font/google";
 import Layout from "../components/Layout";
 import { SiteContext, SiteProvider } from "../hooks/siteContext";
 import { SessionProvider } from "next-auth/react";
+import store from "../data/redux/store";
+import { Provider } from "react-redux";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,13 +14,15 @@ const poppins = Poppins({
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <div className={poppins.className}>
-      <SessionProvider session={session}>
-        <SiteProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </SiteProvider>
-      </SessionProvider>
+      <Provider store={store}>
+        <SessionProvider session={session}>
+          <SiteProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </SiteProvider>
+        </SessionProvider>
+      </Provider>
     </div>
   );
 }

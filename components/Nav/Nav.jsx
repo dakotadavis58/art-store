@@ -8,9 +8,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
 import { useSession } from "next-auth/react";
+import { useSelector } from "react-redux";
+import { Badge } from "@mui/material";
 
 function Nav({ handleOpen }) {
   const { data: session } = useSession();
+  const cartObj = useSelector((state) => state.cart);
+  const cartAmount = cartObj.cart.length;
   const { navLinks, logo, btnText } = data.nav;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +25,9 @@ function Nav({ handleOpen }) {
 
   let menuRef = useRef();
 
+  // close menu when clicking outside of menu
   useEffect(() => {
+    const ref = menuRef?.current;
     document.addEventListener("mousedown", (e) => {
       if (menuRef?.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
@@ -30,7 +36,7 @@ function Nav({ handleOpen }) {
 
     return () => {
       document.removeEventListener("mousedown", (e) => {
-        if (menuRef?.current && !menuRef.current.contains(e.target)) {
+        if (ref && !ref.contains(e.target)) {
           setIsOpen(false);
         }
       });
@@ -62,7 +68,9 @@ function Nav({ handleOpen }) {
           className={`link ${router.pathname === "/cart" ? "activeLink" : ""}`}
         >
           <div className="m-1">
-            <BsCart2 className="text-3xl" />
+            <Badge badgeContent={cartAmount} color="error">
+              <BsCart2 className="text-3xl" />
+            </Badge>
           </div>
         </Link>
         <div className="relative" ref={menuRef}>

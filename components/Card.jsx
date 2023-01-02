@@ -1,21 +1,35 @@
 import { Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../data/redux/cartSlice";
 
 function Card({ product, newArrivals, loading }) {
-  const [showLike, setShowLike] = React.useState(false);
-  const [liked, setLiked] = React.useState(false);
+  const [showLike, setShowLike] = useState(false);
+  const [liked, setLiked] = useState(false);
   const { id, slug, name, price, description, reviews, image } = product;
+  // to get data, use useSelector() hook, to dispatch data, use useDispatch() hook
+  const dispatch = useDispatch();
+
+  // find rating based off all reviews
   const rating =
     reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length;
   ("");
+
+  // add item to liked items
   const handleLike = (e) => {
     e.preventDefault();
     setLiked(!liked);
+  };
+
+  // add item to cart
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    dispatch(addToCart(product));
   };
 
   return (
@@ -87,7 +101,14 @@ function Card({ product, newArrivals, loading }) {
         </Link>
       </div>
       <div className="ml-2">
-        <Button className="" secondary rounded text={"+ Add To Cart"}></Button>
+        <Button
+          className=""
+          secondary
+          rounded
+          onClick={(e) => handleAddToCart(e)}
+        >
+          + Add To Cart
+        </Button>
       </div>
     </article>
   );
