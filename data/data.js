@@ -325,6 +325,25 @@ const data = {
       keywords: "queeriosities, queer, lgbtq, lgbtqia, lgbtqia+",
     },
   },
+  orders: [
+    {
+      id: 1,
+      date: "2021-01-01",
+      total: 100,
+      status: "delivered",
+      products: [
+        {
+          id: 1,
+          name: "Queeriosities",
+          slug: "queeriosities",
+          price: 10,
+          image: "/assets/product1.jpg",
+          description: "The best place to buy",
+          quantity: 1,
+        },
+      ],
+    },
+  ],
 };
 
 export default data;

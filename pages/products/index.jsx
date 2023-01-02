@@ -89,7 +89,6 @@ function Products() {
           console.log("mostRecent");
           setCurrentProducts(
             [...data.products].sort((a, b) => {
-              console.log(new Date(b.date) - new Date(a.date));
               return new Date(b.date) - new Date(a.date);
             })
           );

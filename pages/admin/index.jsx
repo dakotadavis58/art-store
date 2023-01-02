@@ -3,6 +3,7 @@ import { useSiteData } from "../../hooks/siteContext";
 import AddProduct from "../../components/admin/AddProduct";
 import Image from "next/image";
 import ProductsTable from "../../components/admin/ProductsTable";
+import AllOrders from "../../components/admin/AllOrders";
 
 function Admin() {
   const [products, setProducts] = useState([]);
@@ -58,6 +59,9 @@ function Admin() {
         </div>
         <div className={`${tab === "addProduct" ? "flex" : "hidden"}`}>
           <AddProduct />
+        </div>
+        <div className={`${tab === "allOrders" ? "flex" : "hidden"}`}>
+          <AllOrders />
         </div>
       </div>
     </div>

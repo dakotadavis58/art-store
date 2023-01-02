@@ -31,6 +31,16 @@ img {
   border-radius: 0.5rem;
 }
 
+td {
+  padding: 10px 15px;
+}
+
+th {
+  padding: 5px 15px;
+}
+
+/* Layout */
+
 /* Components */
 .newArrivals {
   @apply hover:border-2 hover:border-primary-main;
@@ -39,15 +49,15 @@ img {
 .hero {
 }
 .table-cell {
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 
 .table-head > div {
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 
 .table-row > div {
-  padding: 0 15px;
+  padding: 5px 15px;
 }
 
 .newsLetter {

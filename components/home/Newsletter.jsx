@@ -12,7 +12,7 @@ function Newsletter() {
         <div className="w-3/4 flex flex-col md:flex-row justify-center gap-4">
           <Input
             type="email"
-            placeHolder="Email"
+            placeholder="Email"
             className="w-full h-10 rounded-md px-4 max-w-2xl"
           />
           <Button text={"Send"} rounded primary className=""></Button>

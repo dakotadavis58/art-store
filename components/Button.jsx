@@ -22,7 +22,7 @@ function Button({
         rounded && "btn-rounded"
       } ${roundedFull && "rounded-full"} ${
         outline && "bg-neutral-900 border-2 border-neutral"
-      } ${style && style} ${className && className}}`}
+      } ${style && style} ${className ? className : ""}}`}
     >
       {text} {children}
     </button>
