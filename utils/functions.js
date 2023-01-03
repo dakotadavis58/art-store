@@ -1,3 +1,11 @@
-const formatToDollar = (price) => {
-  return `$${(Math.round(price * 100) / 100).toFixed(2)}`;
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+});
+
+const formatToDollar = (value) => {
+  return formatter.format(value);
 };
+
+export { formatToDollar };

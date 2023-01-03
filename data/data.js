@@ -30,7 +30,7 @@ const data = {
       id: 1,
       slug: "fujifilm-camera",
       name: "Fujifilm Camera",
-      price: 209.99999,
+      price: 209.99,
       image: "/assets/product.jpg",
       description: "A camera that takes great photos",
       stock: 10,

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, deleteItem, subFromCart } from "../data/redux/cartSlice";
 import Image from "next/image";
 import Button from "../components/utils/Button";
+import { formatToDollar } from "../utils/functions";
 
 function Cart() {
   const data = useSiteData();
@@ -21,7 +22,7 @@ function Cart() {
         <meta name="keywords" content={keywords}></meta>
         <link rel="icon" href="/assets/logo.png" />
       </Head>
-      <h1 className="text-4xl">Cart</h1>
+      <h1 className="text-4xl p-6">Cart</h1>
       <div className="grid grid-cols-1 gap-4">
         {cart.cart.length > 0 ? (
           cart.cart.map((item) => {
@@ -35,11 +36,17 @@ function Cart() {
                     fill
                   />
                 </div>
-                <h2>{item.name}</h2>
-                <h2>{item.price}</h2>
-                <h2>{item.quantity}</h2>
+                <div className="flex items-center">
+                  <h2>{item.name}</h2>
+                </div>
+                <div className="flex items-center">
+                  <h2>{formatToDollar(item.price)}</h2>
+                </div>
+                <div className="flex items-center">
+                  <h2>{item.quantity}</h2>
+                </div>
 
-                <div>
+                <div className="flex gap-2 items-center">
                   <Button
                     className="bg-green-500"
                     onClick={() => {
