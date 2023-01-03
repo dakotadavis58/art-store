@@ -4,8 +4,8 @@ import NewArrivals from "../components/home/NewArrivals";
 import Commissions from "../components/home/Commissions";
 import Newsletter from "../components/home/Newsletter";
 import About from "../components/home/About";
-import SectionContainer from "../components/SectionContainer";
 import { useSiteData } from "../hooks/siteContext";
+import SectionContainer from "../components/Layout/SectionContainer";
 
 export default function Home() {
   const data = useSiteData();

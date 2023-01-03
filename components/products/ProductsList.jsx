@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import Card from "../Card";
+import Card from "../utils/Card";
 
 function ProductsList({ products }) {
   return (

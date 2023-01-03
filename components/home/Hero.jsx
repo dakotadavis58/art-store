@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import Button from "../../components/Button";
+import Button from "../utils/Button";
 
 function Hero({ hero }) {
   const { title, subtitle, btnText } = hero;

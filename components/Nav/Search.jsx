@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import Input from "../Input";
+import Input from "../utils/Input";
 
 function Search({ mobile, placeholder, className }) {
   const handleSubmit = (e) => {

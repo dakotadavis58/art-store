@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import data from "../../data/data";
-import Container from "../Container";
+import Container from "../Layout/Container";
 
 function About() {
   const { about } = data;

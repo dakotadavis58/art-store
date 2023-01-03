@@ -6,7 +6,6 @@ function Button({
   text,
   primary,
   sm,
-  rounded,
   roundedFull,
   style,
   secondary,
@@ -16,13 +15,13 @@ function Button({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 hover:shadow-xl text-white font-medium transition-all ${
+      className={`px-4 py-2 hover:shadow-xl text-white font-medium transition-all btn-rounded ${
         primary && "btn-primary"
       } ${secondary && "btn-secondary"} ${sm && "btn-sm"} ${
-        rounded && "btn-rounded"
-      } ${roundedFull && "rounded-full"} ${
-        outline && "bg-neutral-900 border-2 border-neutral"
-      } ${style && style} ${className ? className : ""}}`}
+        roundedFull && "rounded-full"
+      } ${outline && "bg-neutral-900 border-2 border-neutral"} ${
+        style && style
+      } ${className && className}`}
     >
       {text} {children}
     </button>

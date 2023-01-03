@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import spaceFox from "../../public/assets/commissions-img.jpeg";
-import Button from "../Button";
+import Button from "../utils/Button";
 
 function Commissions() {
   const router = useRouter();

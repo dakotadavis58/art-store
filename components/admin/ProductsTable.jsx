@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Button from "../Button";
+import Button from "../utils/Button";
 import { useRouter } from "next/router";
 
 function ProductsTable({ loading, products }) {

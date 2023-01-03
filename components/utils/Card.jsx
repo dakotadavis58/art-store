@@ -6,7 +6,7 @@ import Button from "./Button";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../data/redux/cartSlice";
+import { addToCart } from "../../data/redux/cartSlice";
 
 function Card({ product, newArrivals, loading }) {
   const [showLike, setShowLike] = useState(false);

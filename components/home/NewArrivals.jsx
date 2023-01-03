@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Button from "../../components/Button";
-import Card from "../../components/Card";
+import Card from "../utils/Card";
 
 function NewArrivals({ newArrivals, products }) {
   return (

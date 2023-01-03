@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "./Logo";
 import data from "../data/data.js";
 import Links from "./Links";
-import Input from "./Input";
 import Socials from "./Socials";
 
 function Footer() {

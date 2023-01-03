@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Input from "./Input";
+import Input from "./utils/Input";
 import { useForm } from "react-hook-form";
-import Button from "./Button";
+import Button from "./utils/Button";
 
 function ProductForm({ onSubmit, product }) {
   const {

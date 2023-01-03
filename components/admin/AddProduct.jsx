@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Button from "../Button";
+import Button from "../utils/Button";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Input from "../Input";
+import Input from "../utils/Input";
 import ProductForm from "../ProductForm";
 
 function AddProduct() {
