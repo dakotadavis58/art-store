@@ -6,7 +6,10 @@ function Signin() {
   const [providers, setProviders] = React.useState("");
   const { data } = useSession();
   const router = useRouter();
-  console.log(data);
+  const redirectURL = router.query.redirect
+    ? `/${router.query.redirect}`
+    : null;
+  console.log(router.query.redirect);
 
   useEffect(() => {
     data?.user && router.push("/profile");
@@ -28,7 +31,13 @@ function Signin() {
       ) : (
         Object.values(providers).map((provider) => (
           <div key={provider.name}>
-            <button onClick={() => signIn(provider.id)}>
+            <button
+              onClick={() =>
+                signIn(provider.id, {
+                  callbackUrl: redirectURL == null ? "/profile" : redirectURL,
+                })
+              }
+            >
               Sign in with {provider.name}
             </button>
           </div>

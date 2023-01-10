@@ -1,21 +1,38 @@
 import Head from "next/head";
 import React from "react";
-import { useSiteData } from "../hooks/siteContext";
+import { useSiteData } from "../hooks/SiteContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, deleteItem, subFromCart } from "../data/redux/cartSlice";
 import Image from "next/image";
 import Button from "../components/utils/Button";
 import { formatToDollar } from "../utils/functions";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 function Cart() {
   const tax = 0.05;
   const shipping = 5;
   const data = useSiteData();
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
-
+  const { data: session } = useSession();
+  const { cart } = useSelector((state) => state.cart);
+  const router = useRouter();
   const { cart: cartseo } = data.seo;
   const { title, description, keywords } = cartseo;
+
+  const handleCheckout = () => {
+    if (cart.cartItems.length === 0) {
+      // show message if cart is empty
+
+      console.log("cart is empty, fix to show toast");
+      return;
+    } else if (session) {
+      router.push("/shipping");
+    } else {
+      router.push({ pathname: "/signin", query: { redirect: "shipping" } });
+    }
+  };
+
   return (
     <div className="flex flex-col items-center gap-2 px-10">
       <Head>
@@ -28,8 +45,8 @@ function Cart() {
       {/* items in cart */}
       <div className="flex gap-20">
         <div className="grid grid-cols-1 gap-4">
-          {cart.cart.length > 0 ? (
-            cart.cart.map((item) => {
+          {cart.cartItems.length > 0 ? (
+            cart.cartItems.map((item) => {
               return (
                 <div key={item.id} className="grid grid-cols-5 gap-2">
                   <div className="max-w-[5rem]">
@@ -90,7 +107,7 @@ function Cart() {
           <h2>
             Subtotal:{" "}
             {formatToDollar(
-              cart.cart.reduce((acc, item) => {
+              cart.cartItems.reduce((acc, item) => {
                 return acc + item.price * item.quantity;
               }, 0)
             )}
@@ -99,7 +116,7 @@ function Cart() {
           <h2>
             Tax:{" "}
             {formatToDollar(
-              cart.cart.reduce((acc, item) => {
+              cart.cartItems.reduce((acc, item) => {
                 return acc + item.price * item.quantity * tax;
               }, 0)
             )}
@@ -110,7 +127,7 @@ function Cart() {
           <h2>
             Total:{" "}
             {formatToDollar(
-              cart.cart.reduce((acc, item) => {
+              cart.cartItems.reduce((acc, item) => {
                 return (
                   acc +
                   item.price * item.quantity +
@@ -120,7 +137,9 @@ function Cart() {
             )}
           </h2>
 
-          <Button primary>Checkout</Button>
+          <Button primary onClick={handleCheckout}>
+            Checkout
+          </Button>
         </div>
       </div>
     </div>

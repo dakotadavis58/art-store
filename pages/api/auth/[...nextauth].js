@@ -11,6 +11,17 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  // callbacks: {
+  //   async redirect({ url, baseUrl }) {
+  //     const redirectInURL = new URLSearchParams(url).get("redirect");
+  //     console.log("redirectInURL", redirectInURL);
+  //     const redirect = redirectInURL ? redirectInURL : "/";
+  //     console.log("redirect", redirect);
+  //     console.log("url", url);
+  //     return redirect;
+  //   },
+  // },
+
   pages: {
     signIn: "/signin",
   },

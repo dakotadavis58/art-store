@@ -14,7 +14,7 @@ import { Badge } from "@mui/material";
 function Nav({ handleOpen }) {
   const { data: session } = useSession();
   const cartObj = useSelector((state) => state.cart);
-  const cartAmount = cartObj.cart.length;
+  const cartAmount = cartObj.cart.cartItems.length;
   const { navLinks, logo, btnText } = data.nav;
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);

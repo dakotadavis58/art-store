@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { useSiteData } from "../hooks/siteContext";
+import { useSiteData } from "../hooks/SiteContext";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
@@ -9,6 +9,7 @@ function Profile() {
   const { data: session } = useSession();
   const { profile } = data.seo;
   const { title, description, keywords } = profile;
+
   return (
     <div className="flex flex-col items-center gap-2 px-10">
       <Head>

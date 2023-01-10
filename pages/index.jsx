@@ -4,7 +4,7 @@ import NewArrivals from "../components/home/NewArrivals";
 import Commissions from "../components/home/Commissions";
 import Newsletter from "../components/home/Newsletter";
 import About from "../components/home/About";
-import { useSiteData } from "../hooks/siteContext";
+import { useSiteData } from "../hooks/SiteContext";
 import SectionContainer from "../components/Layout/SectionContainer";
 
 export default function Home() {
