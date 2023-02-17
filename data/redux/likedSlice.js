@@ -4,6 +4,7 @@ const initialState = {
   liked: [],
 };
 
+// persist liked items in local storage
 export const likedSlice = createSlice({
   name: "liked",
   initialState,

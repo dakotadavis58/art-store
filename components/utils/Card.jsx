@@ -7,7 +7,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../data/redux/cartSlice";
-import { addToLiked } from "../../data/redux/likedSlice";
+import { addToLiked, subFromLiked } from "../../data/redux/likedSlice";
 
 function Card({ product, newArrivals, loading }) {
   const [showLike, setShowLike] = useState(false);
@@ -24,9 +24,13 @@ function Card({ product, newArrivals, loading }) {
   // add item to liked items
   const handleLike = (e) => {
     e.preventDefault();
-    setLiked(!liked);
+    if (!liked) {
+      dispatch(addToLiked(product));
+    } else {
+      dispatch(subFromLiked(product));
+    }
 
-    dispatch(addToLiked(product));
+    setLiked(!liked);
   };
 
   // add item to cart

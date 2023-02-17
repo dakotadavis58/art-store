@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { saveUserInfo } from "../data/redux/cartSlice.js";
 import { useSession } from "next-auth/react";
 
-export const SiteContext = React.createContext({
+const SiteDataContext = React.createContext({
   data,
 });
 
@@ -17,15 +17,17 @@ function SiteProvider({ children }) {
     };
     saveUserToRedux(session);
   }, [session, dispatch]);
-  return <SiteContext.Provider value={data}>{children}</SiteContext.Provider>;
+  return (
+    <SiteDataContext.Provider value={data}>{children}</SiteDataContext.Provider>
+  );
 }
 
 function useSiteData() {
-  const context = React.useContext(SiteContext);
+  const context = React.useContext(SiteDataContext);
   if (context === undefined) {
     throw new Error("useSiteData must be used within a SiteProvider");
   }
   return context;
 }
 
-export { SiteProvider, useSiteData };
+export { SiteProvider, useSiteData, SiteDataContext };

@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React, { useContext } from "react";
-import { SiteContext, useSiteData } from "../hooks/siteContext";
+import { SiteContext, useSiteData } from "../hooks/SiteContext";
+import SectionContainer from "../components/Layout/SectionContainer";
+import TwoColSection from "../components/Layout/TwoColSection";
 
 function Contact() {
   const data = useSiteData();
@@ -14,13 +16,12 @@ function Contact() {
         <meta name="keywords" content={keywords}></meta>
         <link rel="icon" href="/assets/logo.png" />
       </Head>
-      <h1 className="text-4xl">Contact</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, iure
-        voluptate. Voluptatibus, deserunt? Tempora fugit reprehenderit modi
-        consequuntur, quis, sit architecto iusto sequi, corrupti odit enim non
-        iure repellat quidem!
-      </p>
+      <h1 className="text-4xl">About Us</h1>
+      <SectionContainer>
+        <div className=" w-screen min-h-[300px] ">
+          <TwoColSection />
+        </div>
+      </SectionContainer>
     </div>
   );
 }

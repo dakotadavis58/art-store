@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import data from "../../data/data";
-import Input from "../../components/Input";
 import ProductForm from "../../components/ProductForm";
 import Image from "next/image";
 

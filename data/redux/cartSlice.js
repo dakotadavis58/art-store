@@ -54,6 +54,7 @@ export const cartSlice = createSlice({
     },
     saveUserInfo: (state, action) => {
       state.userInfo = action.payload;
+      // check if user is in database, if not, add user to database
     },
   },
 });

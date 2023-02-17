@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSiteData } from "../../hooks/siteContext";
+import { useSiteData } from "../../hooks/SiteContext";
 import AddProduct from "../../components/admin/AddProduct";
 import Image from "next/image";
 import ProductsTable from "../../components/admin/ProductsTable";
@@ -9,8 +9,8 @@ function Admin() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState("allProducts");
-  const siteData = useSiteData();
-  const { products: dummyProducts } = siteData;
+  const data = useSiteData();
+  const { products: dummyProducts } = data;
 
   const openTab = (e) => {
     setTab(e.target.id);
@@ -55,7 +55,11 @@ function Admin() {
           </button>
         </div>
         <div className={`${tab === "allProducts" ? "flex" : "hidden"}`}>
-          <ProductsTable loading={loading} products={products} />
+          {loading ? (
+            <>Loading</>
+          ) : (
+            <ProductsTable loading={loading} products={products} />
+          )}
         </div>
         <div className={`${tab === "addProduct" ? "flex" : "hidden"}`}>
           <AddProduct />

@@ -9,8 +9,9 @@ import SectionContainer from "../components/Layout/SectionContainer";
 
 export default function Home() {
   const data = useSiteData();
-  const { hero, commissions, newArrivals, newsletter, products, seo } = data;
+  const { hero, newArrivals, commissions, newsletter, seo, products } = data;
   const { title, description, keywords } = seo.home;
+  console.log(data);
   return (
     <div className="w-full h-full">
       <Head>

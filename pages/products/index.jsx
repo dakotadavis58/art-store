@@ -2,7 +2,7 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import FilterSortBar from "../../components/products/FilterSortBar";
 import ProductsList from "../../components/products/ProductsList";
-import { useSiteData } from "../../hooks/siteContext";
+import { useSiteData } from "../../hooks/SiteContext";
 
 function Products() {
   const data = useSiteData();
