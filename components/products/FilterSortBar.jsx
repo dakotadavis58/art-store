@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import TuneIcon from "@mui/icons-material/Tune";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import { useSiteData } from "../../hooks/SiteContext";
 import CloseIcon from "@mui/icons-material/Close";
 import { Chip } from "@mui/material";
 import Button from "../utils/Button";
@@ -17,8 +16,6 @@ function FilterSortBar({
 }) {
   const [showFilter, setShowFilter] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
-
-  const data = useSiteData();
 
   useEffect(() => {
     window.onclick = function (event) {

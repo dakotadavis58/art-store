@@ -1,10 +1,14 @@
 import React from "react";
 import Button from "../components/utils/Button";
+import { useRouter } from "next/router";
 
 function OrderPlaced() {
+  const router = useRouter();
+
   const handlePlaceOrder = (e) => {
     e.preventDefault();
     console.log("Place Order");
+    router.push("/products");
   };
 
   return (
