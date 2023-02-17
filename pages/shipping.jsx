@@ -20,7 +20,7 @@ function Shipping() {
   return (
     <div>
       <PageTitle>Shipping</PageTitle>
-      <CheckoutSteps step1 />
+      <CheckoutSteps step1 step2 />
       <ShippingForm onSubmit={onSubmit} />
     </div>
   );

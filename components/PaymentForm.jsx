@@ -22,10 +22,19 @@ function PaymentForm({ onSubmit }) {
       country: "",
     },
   });
+
+  const handleFormSubmit = (data) => {
+    console.log(data);
+    router.push("/orderplaced");
+  };
   return (
     <div>
-      <Button primary onClick={() => router.push("/placeorder")}>
-        Continue
+      <p>We use PayPal to process payments.</p>
+      <Button secondary onClick={() => alert("paypal payment thing")}>
+        Pay with paypal
+      </Button>
+      <Button primary onClick={(e) => handleFormSubmit(e)}>
+        Finish Order
       </Button>
     </div>
   );

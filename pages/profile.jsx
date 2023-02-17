@@ -7,6 +7,7 @@ import Image from "next/image";
 function Profile() {
   const data = useSiteData();
   const { data: session } = useSession();
+  console.log(session);
   const { profile } = data.seo;
   const { title, description, keywords } = profile;
 
