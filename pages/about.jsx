@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import TwoColSection from "../components/Layout/TwoColSection";
-import { useSiteData } from "../hooks/SiteContext.jsx";
+import { useSiteData } from "../hooks/SiteContext.js";
 import SectionContainer from "../components/Layout/SectionContainer";
 
 function About() {
