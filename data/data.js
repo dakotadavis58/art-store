@@ -124,6 +124,30 @@ const data = {
       ],
       date: "2022-11-03",
     },
+    {
+      id: 5,
+      name: "Sneakers1",
+      slug: "queeriosities4",
+      price: 19.99,
+      image: "/assets/product3.jpg",
+      description: "The best place to buy",
+      reviews: [
+        {
+          id: 1,
+          name: "John Doe",
+          rating: 5,
+          comment: "This is a great product",
+        },
+
+        {
+          id: 2,
+          name: "Jane Doe",
+          rating: 4,
+          comment: "This is a great product",
+        },
+      ],
+      date: "2022-11-04",
+    },
     // {
     //   id: 5,
     //   name: "Queeriosities4",

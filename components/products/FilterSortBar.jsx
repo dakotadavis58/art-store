@@ -129,7 +129,7 @@ function FilterSortBar({
           {activeFilters.filters.map((filter) => (
             <div key={filter}>
               <Chip
-                className="bg-primary-main text-white hover:bg-primary-dark"
+                className=" text-white font-semibold border-2 hover:bg-primary-dark"
                 label={filter}
                 variant="outlined"
                 onDelete={() => handleDeleteFilter(filter)}
