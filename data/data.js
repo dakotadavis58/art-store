@@ -225,8 +225,7 @@ const data = {
   },
   about: {
     title: "About Us!",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi corporis perspiciatis quasi recusandae quisquam molestias et ad accusantium fuga officia, delectus, architecto, aliquid porro provident doloribus culpa dolore quam sunt.",
+    description: `Welcome to Curiosities, an art store that features our original artwork and the products we create. We are a small group of friends and family from New England who love to make art in our free time, and we wanted to share our creations with the world. Our goal is to provide unique, high-quality art pieces and products that will inspire and delight our customers.`,
     btnText: "Find Out More",
     images: [
       {
